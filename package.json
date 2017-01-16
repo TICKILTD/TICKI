@@ -1,0 +1,28 @@
+{
+  "name": "dpa-it",
+  "version": "1.2.7",
+  "description": "An npm package to install the dpa-it component",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/treehouse/treehouse_profile.js.git"
+  },
+  "keywords": [
+    "dpa-it",
+    "dpa",
+    "data protection"
+  ],
+  "dependencies": {
+    "jquery": ">=3.0.0",
+    "request": ">=2.79.0"
+  },
+  "author": "Simon Parsons",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dpait/dpa-it.js/issues"
+  },
+  "homepage": "https://github.com/dpait/dpa-it.js#readme"
+}
