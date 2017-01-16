@@ -23,10 +23,16 @@ class DPA {
 
 			$.getJSON( "http://localhost:8080/api/questions")
 			    .done(function(questions) {
-			      $.each(questions, function( i, question ) {
+
+		    		var html = "<input type=\"checkbox\" value=\"{id}\"> <strong>{text}</strong> <br />";
+
+			      	$.each(questions, function( i, question ) {
 			
-					$(self.container).append("<input type=\"checkbox\" value=\"" + question._id + "\"><strong>" + question.text + "</strong><br/>");
-			      });
+						var out = html.replace(/\{id\}/, question.id)
+									  .replace(/\{text\}/, question.text);
+
+						$(self.container).append(out);
+			      	});
 			    });
         }
     }
@@ -35,7 +41,7 @@ class DPA {
     	var self = this;
 
     	if (self.container) {
-    		
+
     	}
     }
 }
