@@ -1,7 +1,6 @@
 'use strict';
 
 var $ = require("jquery");
-var request = require("request");
 
 /**
  * Handles all your DPA needs
@@ -17,12 +16,27 @@ class DPA {
     }
 
     init() {
-        if (this.container) {
 
+    	var self = this;
 
+        if (self.container) {
 
-            $(this.container).append("<strong>this is where something is gonna happen</strong>");
+			$.getJSON( "http://localhost:8080/api/questions")
+			    .done(function(questions) {
+			      $.each(questions, function( i, question ) {
+			
+					$(self.container).append("<input type=\"checkbox\" value=\"" + question._id + "\"><strong>" + question.text + "</strong><br/>");
+			      });
+			    });
         }
+    }
+
+    post() {
+    	var self = this;
+
+    	if (self.container) {
+    		
+    	}
     }
 }
 
