@@ -31,12 +31,23 @@ class DPA {
                     var input_css = "";
                     if (self.config.input_css) input_css = " class=\"" + self.config.input_css + "\"";
 
-                    var html = "<input id=\"{id}\"" + input_css + " type=\"checkbox\"> <strong>{text}</strong> <br />";
+                    var form_group = self.config.form_group ? self.config.form_group : "form-group";
+                    var form_check = self.config.form_check ? self.config.form_check : "form-check";
+                    var form_check_label = self.config.form_check_label ? self.config.form_check_label : "form-check-label";
+                    var form_check_input = self.form_check_input ? self.form_check_input : "form-check-input";
+                    
+                    var container = `<div class=\"${form_group}\">\r\n` + 
+                                    `\t<div class=\"${form_check}\">\r\n` + 
+                                    `\t\t<label class=\"${form_check_label}\">\r\n` + 
+                                    `\t\t\t<input id=\"{id}\" class=\"${form_check_input}\" type=\"checkbox\" value=\"{value}\">{text}</input>\r\n` +
+                                    `\t\t</label>\r\n` + 
+                                    `\t</div>\r\n` + 
+                                    `</div>`;
 
                     $.each(questions, function( i, question ) {
             
-                        var out = html.replace(/\{id\}/, question._id)
-                                      .replace(/\{text\}/, question.text);
+                        var out = container.replace(/\{id\}/, question._id)
+                                           .replace(/\{text\}/, question.text);
 
                         $(self.container).append(out);
                     });

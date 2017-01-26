@@ -1,6 +1,6 @@
 {
   "name": "dpa-it",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "An npm package to install the dpa-it component",
   "main": "app.js",
   "scripts": {
@@ -16,8 +16,7 @@
     "data protection"
   ],
   "dependencies": {
-    "jquery": ">=3.0.0",
-    "request": ">=2.79.0"
+    "jquery": ">=3.0.0"
   },
   "author": "Simon Parsons",
   "license": "MIT",
